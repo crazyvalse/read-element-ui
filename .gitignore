@@ -102,9 +102,4 @@ dist
 
 # TernJS port file
 .tern-port
-.idea/encodings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/read-element-ui.iml
-.idea/vcs.xml
-.idea/workspace.xml
+.idea/
