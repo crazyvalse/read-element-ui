@@ -1,3 +1,9 @@
+/**
+ * 主要是把 .md文件组装成 .vue文件
+ * 1. 先
+ *
+ */
+
 const {
   stripScript,
   stripTemplate,
@@ -18,17 +24,24 @@ module.exports = function(source) {
   let output = []; // 输出的内容
   let start = 0; // 字符串开始位置
 
+  // 获得注释的起始位置
   let commentStart = content.indexOf(startTag);
+  // 从起始位置开始找闭合结尾
   let commentEnd = content.indexOf(endTag, commentStart + startTagLen);
+  // 如果找到了
   while (commentStart !== -1 && commentEnd !== -1) {
     output.push(content.slice(start, commentStart));
 
-    const commentContent = content.slice(commentStart + startTagLen, commentEnd);
+    // 获得内部 全部```html部分
+    const commentContent = content.slice(commentStart + startTagLen, commentEnd)
+    // 获得 vue sfc中的template部分
     const html = stripTemplate(commentContent);
+    // 获得 vue sfc中的script部分
     const script = stripScript(commentContent);
     let demoComponentContent = genInlineComponentText(html, script);
     const demoComponentName = `element-demo${id}`;
     output.push(`<template slot="source"><${demoComponentName} /></template>`);
+    // components 的内容
     componenetsString += `${JSON.stringify(demoComponentName)}: ${demoComponentContent},`;
 
     // 重新计算下一次的位置

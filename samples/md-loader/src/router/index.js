@@ -18,6 +18,10 @@ export default new Router({
     {
       path: '/button',
       component: () => import('../docs/button.md')
+    },
+    {
+      path: '/dialog',
+      component: () => import('../docs/dialog.md')
     }
   ]
 })
