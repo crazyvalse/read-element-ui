@@ -11,7 +11,9 @@ module.exports = md => {
     // 判断该 fence 是否在 :::demo 内
     // 判断：前一个是 demo，当前是 html
     const prevToken = tokens[idx - 1];
-    const isInDemoContainer = prevToken && prevToken.nesting === 1 && prevToken.info.trim().match(/^demo\s*(.*)$/);
+    const isInDemoContainer = prevToken && prevToken.nesting === 1 &&
+      prevToken.info.trim().match(/^demo\s*(.*)$/);
+
     if (token.info === 'html' && isInDemoContainer) {
       // 1. 包上 slot
       // 2. 把html代码转义

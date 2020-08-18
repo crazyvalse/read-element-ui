@@ -1,8 +1,8 @@
 /**
  * 1. 给标题做锚点，以大串作为id标识
- * 2. 把 :::demo 做成 <demo-block>
- * 3. 获得示例代码，并用 <!--element-demo 包装，以便后面制作 组件
- * 4. 组织 代码显示的code块； <template slot="highlight">
+ * 2. 把 :::demo 做成 <demo-block>组件调用，并在里面组装 slot
+ * 3. 获得示例代码，并用 <!--element-demo 包装，以便后面制作 组件slot
+ * 4. 组织 代码显示的code块 slot； <template slot="highlight">
  */
 
 // 链式设置 markdown-it插件
@@ -23,6 +23,7 @@ const overWriteFenceRule = require('./fence');
 const config = new Config();
 
 config
+  // 允许源代码中有html相关标签
   .options.html(true).end()
 
   // 给标题添加 锚点

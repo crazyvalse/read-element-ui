@@ -1,20 +1,20 @@
 const { compileTemplate } = require('@vue/component-compiler-utils');
 const compiler = require('vue-template-compiler');
 
-// 获得 script 标签
+// 1. 获得 script 标签
 function stripScript(content) {
   const result = content.match(/<(script)>([\s\S]+)<\/\1>/);
   return result && result[2] ? result[2].trim() : '';
 }
 
-// 获得 style标签
+// 2. 获得 style标签
 function stripStyle(content) {
   const result = content.match(/<(style)\s*>([\s\S]+)<\/\1>/);
   return result && result[2] ? result[2].trim() : '';
 }
 
+// 3. 去掉 script和style，就要 template
 // 编写例子时不一定有 template。所以采取的方案是剔除其他的内容
-// 去掉 script和style，就要 template
 function stripTemplate(content) {
   content = content.trim();
   if (!content) {

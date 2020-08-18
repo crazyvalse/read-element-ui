@@ -5,439 +5,313 @@
 	<title>Title</title>
 </head>
 <body>
-<section class="content element-doc content"><h2 id="button-an-niu">
-	<a href="https://element.eleme.cn/#/zh-CN/component/button#button-an-niu" aria-hidden="true" class="header-anchor">¶</a> Button 按钮
-</h2>
-	<p>常用的操作按钮。</p>
-	<h3 id="ji-chu-yong-fa">
-		<a href="https://element.eleme.cn/#/zh-CN/component/button#ji-chu-yong-fa" aria-hidden="true" class="header-anchor">¶</a> 基础用法
-	</h3>
-	<p>基础的按钮用法。</p>
-	<div class="demo-block demo-zh-CN demo-button">
-		<div class="source">
-			<div>
-				<div class="el-row">
-					<button type="button" class="el-button el-button--default"><!----><!----><span>默认按钮</span></button>
-					<button type="button" class="el-button el-button--primary"><!----><!----><span>主要按钮</span></button>
-					<button type="button" class="el-button el-button--success"><!----><!----><span>成功按钮</span></button>
-					<button type="button" class="el-button el-button--info"><!----><!----><span>信息按钮</span></button>
-					<button type="button" class="el-button el-button--warning"><!----><!----><span>警告按钮</span></button>
-					<button type="button" class="el-button el-button--danger"><!----><!----><span>危险按钮</span></button>
-				</div>
-				<div class="el-row">
-					<button type="button" class="el-button el-button--default is-plain"><!----><!----><span>朴素按钮</span></button>
-					<button type="button" class="el-button el-button--primary is-plain"><!----><!----><span>主要按钮</span></button>
-					<button type="button" class="el-button el-button--success is-plain"><!----><!----><span>成功按钮</span></button>
-					<button type="button" class="el-button el-button--info is-plain"><!----><!----><span>信息按钮</span></button>
-					<button type="button" class="el-button el-button--warning is-plain"><!----><!----><span>警告按钮</span></button>
-					<button type="button" class="el-button el-button--danger is-plain"><!----><!----><span>危险按钮</span></button>
-				</div>
-				<div class="el-row">
-					<button type="button" class="el-button el-button--default is-round"><!----><!----><span>圆角按钮</span></button>
-					<button type="button" class="el-button el-button--primary is-round"><!----><!----><span>主要按钮</span></button>
-					<button type="button" class="el-button el-button--success is-round"><!----><!----><span>成功按钮</span></button>
-					<button type="button" class="el-button el-button--info is-round"><!----><!----><span>信息按钮</span></button>
-					<button type="button" class="el-button el-button--warning is-round"><!----><!----><span>警告按钮</span></button>
-					<button type="button" class="el-button el-button--danger is-round"><!----><!----><span>危险按钮</span></button>
-				</div>
-				<div class="el-row">
-					<button type="button" class="el-button el-button--default is-circle"><!----><i class="el-icon-search"></i><!---->
-					</button>
-					<button type="button" class="el-button el-button--primary is-circle"><!----><i class="el-icon-edit"></i><!---->
-					</button>
-					<button type="button" class="el-button el-button--success is-circle"><!----><i class="el-icon-check"></i><!---->
-					</button>
-					<button type="button" class="el-button el-button--info is-circle"><!----><i class="el-icon-message"></i><!---->
-					</button>
-					<button type="button" class="el-button el-button--warning is-circle"><!----><i class="el-icon-star-off"></i><!---->
-					</button>
-					<button type="button" class="el-button el-button--danger is-circle"><!----><i class="el-icon-delete"></i><!---->
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="meta" style="height: 870px;">
-			<div class="description">
-				<div><p>使用<code>type</code>、<code>plain</code>、<code>round</code>和<code>circle</code>属性来定义 Button 的样式。</p></div>
-			</div>
-			<div class="highlight"><pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-row</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span>&gt;</span>默认按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>主要按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span>&gt;</span>成功按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span>&gt;</span>信息按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span>&gt;</span>警告按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span>&gt;</span>危险按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-row</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">el-row</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">plain</span>&gt;</span>朴素按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">plain</span>&gt;</span>主要按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span> <span class="hljs-attr">plain</span>&gt;</span>成功按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span> <span class="hljs-attr">plain</span>&gt;</span>信息按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span> <span class="hljs-attr">plain</span>&gt;</span>警告按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span> <span class="hljs-attr">plain</span>&gt;</span>危险按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-row</span>&gt;</span>
+<template>
+	<section class="content element-doc">
+		<h2 id="button-an-niu"><a class="header-anchor" href="#button-an-niu">¶</a> Button 按钮</h2>
+		<p>常用的操作按钮。</p>
+		<h3 id="ji-chu-yong-fa"><a class="header-anchor" href="#ji-chu-yong-fa">¶</a> 基础用法</h3>
+		<p>基础的按钮用法。</p>
+		<demo-block>
+			<div><p>使用<code>type</code>、<code>plain</code>、<code>round</code>和<code>circle</code>属性来定义 Button 的样式。</p>
+			</div>
+			<template slot="source"><element-demo0 /></template>
+			<template slot="highlight"><pre v-pre><code class="html">&lt;el-row&gt;
+  &lt;el-button&gt;默认按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot;&gt;主要按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;success&quot;&gt;成功按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;info&quot;&gt;信息按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;warning&quot;&gt;警告按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;danger&quot;&gt;危险按钮&lt;/el-button&gt;
+&lt;/el-row&gt;
 
-<span class="hljs-tag">&lt;<span class="hljs-name">el-row</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">round</span>&gt;</span>圆角按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">round</span>&gt;</span>主要按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span> <span class="hljs-attr">round</span>&gt;</span>成功按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span> <span class="hljs-attr">round</span>&gt;</span>信息按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span> <span class="hljs-attr">round</span>&gt;</span>警告按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span> <span class="hljs-attr">round</span>&gt;</span>危险按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-row</span>&gt;</span>
+&lt;el-row&gt;
+  &lt;el-button plain&gt;朴素按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot; plain&gt;主要按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;success&quot; plain&gt;成功按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;info&quot; plain&gt;信息按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;warning&quot; plain&gt;警告按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;danger&quot; plain&gt;危险按钮&lt;/el-button&gt;
+&lt;/el-row&gt;
 
-<span class="hljs-tag">&lt;<span class="hljs-name">el-row</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-search"</span> <span class="hljs-attr">circle</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-edit"</span> <span class="hljs-attr">circle</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-check"</span> <span class="hljs-attr">circle</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-message"</span> <span class="hljs-attr">circle</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-star-off"</span> <span class="hljs-attr">circle</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-delete"</span> <span class="hljs-attr">circle</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-row</span>&gt;</span>
-</code></pre>
-			</div>
-		</div>
-		<div class="demo-block-control is-fixed" style="left: 554.333px;">
-			<i class="el-icon-caret-top"></i><span style="display: none;">隐藏代码</span>
-			<button type="button" class="el-button control-button el-tooltip el-button--text el-button--small" aria-describedby="el-tooltip-9107" tabindex="0" style=""><!----><!----><span>
-          在线运行
-        </span></button>
-		</div>
-	</div>
-	<h3 id="jin-yong-zhuang-tai">
-		<a href="https://element.eleme.cn/#/zh-CN/component/button#jin-yong-zhuang-tai" aria-hidden="true" class="header-anchor">¶</a> 禁用状态
-	</h3>
-	<p>按钮不可用状态。</p>
-	<div class="demo-block demo-zh-CN demo-button">
-		<div class="source">
-			<div>
-				<div class="el-row">
-					<button disabled="disabled" type="button" class="el-button el-button--default is-disabled"><!----><!----><span>默认按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--primary is-disabled"><!----><!----><span>主要按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--success is-disabled"><!----><!----><span>成功按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--info is-disabled"><!----><!----><span>信息按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--warning is-disabled"><!----><!----><span>警告按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--danger is-disabled"><!----><!----><span>危险按钮</span>
-					</button>
-				</div>
-				<div class="el-row">
-					<button disabled="disabled" type="button" class="el-button el-button--default is-disabled is-plain"><!----><!----><span>朴素按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--primary is-disabled is-plain"><!----><!----><span>主要按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--success is-disabled is-plain"><!----><!----><span>成功按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--info is-disabled is-plain"><!----><!----><span>信息按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--warning is-disabled is-plain"><!----><!----><span>警告按钮</span>
-					</button>
-					<button disabled="disabled" type="button" class="el-button el-button--danger is-disabled is-plain"><!----><!----><span>危险按钮</span>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="meta">
-			<div class="description">
-				<div><p>你可以使用<code>disabled</code>属性来定义按钮是否可用，它接受一个<code>Boolean</code>值。</p></div>
-			</div>
-			<div class="highlight"><pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-row</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">disabled</span>&gt;</span>默认按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">disabled</span>&gt;</span>主要按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span> <span class="hljs-attr">disabled</span>&gt;</span>成功按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span> <span class="hljs-attr">disabled</span>&gt;</span>信息按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span> <span class="hljs-attr">disabled</span>&gt;</span>警告按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span> <span class="hljs-attr">disabled</span>&gt;</span>危险按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-row</span>&gt;</span>
+&lt;el-row&gt;
+  &lt;el-button round&gt;圆角按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot; round&gt;主要按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;success&quot; round&gt;成功按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;info&quot; round&gt;信息按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;warning&quot; round&gt;警告按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;danger&quot; round&gt;危险按钮&lt;/el-button&gt;
+&lt;/el-row&gt;
 
-<span class="hljs-tag">&lt;<span class="hljs-name">el-row</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">disabled</span>&gt;</span>朴素按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">disabled</span>&gt;</span>主要按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">disabled</span>&gt;</span>成功按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">disabled</span>&gt;</span>信息按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">disabled</span>&gt;</span>警告按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">disabled</span>&gt;</span>危险按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-row</span>&gt;</span>
-</code></pre>
+&lt;el-row&gt;
+  &lt;el-button icon=&quot;el-icon-search&quot; circle&gt;&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-edit&quot; circle&gt;&lt;/el-button&gt;
+  &lt;el-button type=&quot;success&quot; icon=&quot;el-icon-check&quot; circle&gt;&lt;/el-button&gt;
+  &lt;el-button type=&quot;info&quot; icon=&quot;el-icon-message&quot; circle&gt;&lt;/el-button&gt;
+  &lt;el-button type=&quot;warning&quot; icon=&quot;el-icon-star-off&quot; circle&gt;&lt;/el-button&gt;
+  &lt;el-button type=&quot;danger&quot; icon=&quot;el-icon-delete&quot; circle&gt;&lt;/el-button&gt;
+&lt;/el-row&gt;
+</code></pre></template></demo-block>
+		<h3 id="jin-yong-zhuang-tai"><a class="header-anchor" href="#jin-yong-zhuang-tai">¶</a> 禁用状态</h3>
+		<p>按钮不可用状态。</p>
+		<demo-block>
+			<div><p>你可以使用<code>disabled</code>属性来定义按钮是否可用，它接受一个<code>Boolean</code>值。</p>
 			</div>
-		</div>
-		<div class="demo-block-control"><i class="el-icon-caret-bottom"></i><span style="display: none;">显示代码</span>
-			<button type="button" class="el-button control-button el-tooltip el-button--text el-button--small" aria-describedby="el-tooltip-4844" tabindex="0" style="display: none;"><!----><!----><span>
-          在线运行
-        </span></button>
-		</div>
-	</div>
-	<h3 id="wen-zi-an-niu">
-		<a href="https://element.eleme.cn/#/zh-CN/component/button#wen-zi-an-niu" aria-hidden="true" class="header-anchor">¶</a> 文字按钮
-	</h3>
-	<p>没有边框和背景色的按钮。</p>
-	<div class="demo-block demo-zh-CN demo-button">
-		<div class="source">
-			<div>
-				<button type="button" class="el-button el-button--text"><!----><!----><span>文字按钮</span></button>
-				<button disabled="disabled" type="button" class="el-button el-button--text is-disabled"><!----><!----><span>文字按钮</span>
-				</button>
+			<template slot="source"><element-demo1 /></template>
+			<template slot="highlight"><pre v-pre><code class="html">&lt;el-row&gt;
+  &lt;el-button disabled&gt;默认按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot; disabled&gt;主要按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;success&quot; disabled&gt;成功按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;info&quot; disabled&gt;信息按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;warning&quot; disabled&gt;警告按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;danger&quot; disabled&gt;危险按钮&lt;/el-button&gt;
+&lt;/el-row&gt;
+
+&lt;el-row&gt;
+  &lt;el-button plain disabled&gt;朴素按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot; plain disabled&gt;主要按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;success&quot; plain disabled&gt;成功按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;info&quot; plain disabled&gt;信息按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;warning&quot; plain disabled&gt;警告按钮&lt;/el-button&gt;
+  &lt;el-button type=&quot;danger&quot; plain disabled&gt;危险按钮&lt;/el-button&gt;
+&lt;/el-row&gt;
+</code></pre></template></demo-block><h3 id="wen-zi-an-niu"><a class="header-anchor" href="#wen-zi-an-niu">¶</a> 文字按钮</h3>
+		<p>没有边框和背景色的按钮。</p>
+		<demo-block>
+
+			<template slot="source"><element-demo2 /></template>
+			<template slot="highlight"><pre v-pre><code class="html">&lt;el-button type=&quot;text&quot;&gt;文字按钮&lt;/el-button&gt;
+&lt;el-button type=&quot;text&quot; disabled&gt;文字按钮&lt;/el-button&gt;
+</code></pre></template></demo-block><h3 id="tu-biao-an-niu"><a class="header-anchor" href="#tu-biao-an-niu">¶</a> 图标按钮</h3>
+		<p>带图标的按钮可增强辨识度（有文字）或节省空间（无文字）。</p>
+		<demo-block>
+			<div><p>设置<code>icon</code>属性即可，icon 的列表可以参考 Element 的 icon 组件，也可以设置在文字右边的 icon ，只要使用<code>i</code>标签即可，可以使用自定义图标。</p>
 			</div>
-		</div>
-		<div class="meta"><!---->
-			<div class="highlight" style="width: 100%;"><pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span>文字按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">disabled</span>&gt;</span>文字按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-</code></pre>
+			<template slot="source"><element-demo3 /></template>
+			<template slot="highlight"><pre v-pre><code class="html">&lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-edit&quot;&gt;&lt;/el-button&gt;
+&lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-share&quot;&gt;&lt;/el-button&gt;
+&lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-delete&quot;&gt;&lt;/el-button&gt;
+&lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-search&quot;&gt;搜索&lt;/el-button&gt;
+&lt;el-button type=&quot;primary&quot;&gt;上传&lt;i class=&quot;el-icon-upload el-icon--right&quot;&gt;&lt;/i&gt;&lt;/el-button&gt;
+</code></pre></template></demo-block><h3 id="an-niu-zu"><a class="header-anchor" href="#an-niu-zu">¶</a> 按钮组</h3>
+		<p>以按钮组的方式出现，常用于多项类似操作。</p>
+		<demo-block>
+			<div><p>使用<code>&lt;el-button-group&gt;</code>标签来嵌套你的按钮。</p>
 			</div>
-		</div>
-		<div class="demo-block-control"><i class="el-icon-caret-bottom"></i><span style="display: none;">显示代码</span>
-			<button type="button" class="el-button control-button el-tooltip el-button--text el-button--small" aria-describedby="el-tooltip-7085" tabindex="0" style="display: none;"><!----><!----><span>
-          在线运行
-        </span></button>
-		</div>
-	</div>
-	<h3 id="tu-biao-an-niu">
-		<a href="https://element.eleme.cn/#/zh-CN/component/button#tu-biao-an-niu" aria-hidden="true" class="header-anchor">¶</a> 图标按钮
-	</h3>
-	<p>带图标的按钮可增强辨识度（有文字）或节省空间（无文字）。</p>
-	<div class="demo-block demo-zh-CN demo-button">
-		<div class="source">
-			<div>
-				<button type="button" class="el-button el-button--primary"><!----><i class="el-icon-edit"></i><!----></button>
-				<button type="button" class="el-button el-button--primary"><!----><i class="el-icon-share"></i><!----></button>
-				<button type="button" class="el-button el-button--primary"><!----><i class="el-icon-delete"></i><!----></button>
-				<button type="button" class="el-button el-button--primary"><!----><i class="el-icon-search"></i><span>搜索</span>
-				</button>
-				<button type="button" class="el-button el-button--primary"><!----><!----><span>上传<i class="el-icon-upload el-icon--right"></i></span>
-				</button>
+			<template slot="source"><element-demo4 /></template>
+			<template slot="highlight"><pre v-pre><code class="html">&lt;el-button-group&gt;
+  &lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-arrow-left&quot;&gt;上一页&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot;&gt;下一页&lt;i class=&quot;el-icon-arrow-right el-icon--right&quot;&gt;&lt;/i&gt;&lt;/el-button&gt;
+&lt;/el-button-group&gt;
+&lt;el-button-group&gt;
+  &lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-edit&quot;&gt;&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-share&quot;&gt;&lt;/el-button&gt;
+  &lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-delete&quot;&gt;&lt;/el-button&gt;
+&lt;/el-button-group&gt;
+</code></pre></template></demo-block><h3 id="jia-zai-zhong"><a class="header-anchor" href="#jia-zai-zhong">¶</a> 加载中</h3>
+		<p>点击按钮后进行数据加载操作，在按钮上显示加载状态。</p>
+		<demo-block>
+			<div><p>要设置为 loading 状态，只要设置<code>loading</code>属性为<code>true</code>即可。</p>
 			</div>
-		</div>
-		<div class="meta">
-			<div class="description">
-				<div><p>设置<code>icon</code>属性即可，icon 的列表可以参考 Element 的 icon 组件，也可以设置在文字右边的 icon ，只要使用<code>i</code>标签即可，可以使用自定义图标。
-				</p></div>
+			<template slot="source"><element-demo5 /></template>
+			<template slot="highlight"><pre v-pre><code class="html">&lt;el-button type=&quot;primary&quot; :loading=&quot;true&quot;&gt;加载中&lt;/el-button&gt;
+</code></pre></template></demo-block><h3 id="bu-tong-chi-cun"><a class="header-anchor" href="#bu-tong-chi-cun">¶</a> 不同尺寸</h3>
+		<p>Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。</p>
+		<demo-block>
+			<div><p>额外的尺寸：<code>medium</code>、<code>small</code>、<code>mini</code>，通过设置<code>size</code>属性来配置它们。</p>
 			</div>
-			<div class="highlight"><pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-edit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-share"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-delete"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-search"</span>&gt;</span>搜索<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>上传<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"el-icon-upload el-icon--right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-</code></pre>
-			</div>
-		</div>
-		<div class="demo-block-control"><i class="el-icon-caret-bottom"></i><span style="display: none;">显示代码</span>
-			<button type="button" class="el-button control-button el-tooltip el-button--text el-button--small" aria-describedby="el-tooltip-9846" tabindex="0" style="display: none;"><!----><!----><span>
-          在线运行
-        </span></button>
-		</div>
-	</div>
-	<h3 id="an-niu-zu">
-		<a href="https://element.eleme.cn/#/zh-CN/component/button#an-niu-zu" aria-hidden="true" class="header-anchor">¶</a> 按钮组
-	</h3>
-	<p>以按钮组的方式出现，常用于多项类似操作。</p>
-	<div class="demo-block demo-zh-CN demo-button">
-		<div class="source">
-			<div>
-				<div class="el-button-group">
-					<button type="button" class="el-button el-button--primary"><!----><i class="el-icon-arrow-left"></i><span>上一页</span>
-					</button>
-					<button type="button" class="el-button el-button--primary"><!----><!----><span>下一页<i class="el-icon-arrow-right el-icon--right"></i></span>
-					</button>
-				</div>
-				<div class="el-button-group">
-					<button type="button" class="el-button el-button--primary"><!----><i class="el-icon-edit"></i><!----></button>
-					<button type="button" class="el-button el-button--primary"><!----><i class="el-icon-share"></i><!---->
-					</button>
-					<button type="button" class="el-button el-button--primary"><!----><i class="el-icon-delete"></i><!---->
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="meta">
-			<div class="description">
-				<div><p>使用<code>&lt;el-button-group&gt;</code>标签来嵌套你的按钮。</p></div>
-			</div>
-			<div class="highlight"><pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-button-group</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-arrow-left"</span>&gt;</span>上一页<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>下一页<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"el-icon-arrow-right el-icon--right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-button-group</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">el-button-group</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-edit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-share"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"el-icon-delete"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-button-group</span>&gt;</span>
-</code></pre>
-			</div>
-		</div>
-		<div class="demo-block-control"><i class="el-icon-caret-bottom"></i><span style="display: none;">显示代码</span>
-			<button type="button" class="el-button control-button el-tooltip el-button--text el-button--small" aria-describedby="el-tooltip-1501" tabindex="0" style="display: none;"><!----><!----><span>
-          在线运行
-        </span></button>
-		</div>
-	</div>
-	<h3 id="jia-zai-zhong">
-		<a href="https://element.eleme.cn/#/zh-CN/component/button#jia-zai-zhong" aria-hidden="true" class="header-anchor">¶</a> 加载中
-	</h3>
-	<p>点击按钮后进行数据加载操作，在按钮上显示加载状态。</p>
-	<div class="demo-block demo-zh-CN demo-button">
-		<div class="source">
-			<div>
-				<button disabled="disabled" type="button" class="el-button el-button--primary is-loading">
-					<i class="el-icon-loading"></i><!----><span>加载中</span></button>
-			</div>
-		</div>
-		<div class="meta">
-			<div class="description">
-				<div><p>要设置为 loading 状态，只要设置<code>loading</code>属性为<code>true</code>即可。</p></div>
-			</div>
-			<div class="highlight"><pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">:loading</span>=<span class="hljs-string">"true"</span>&gt;</span>加载中<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-</code></pre>
-			</div>
-		</div>
-		<div class="demo-block-control"><i class="el-icon-caret-bottom"></i><span style="display: none;">显示代码</span>
-			<button type="button" class="el-button control-button el-tooltip el-button--text el-button--small" aria-describedby="el-tooltip-9090" tabindex="0" style="display: none;"><!----><!----><span>
-          在线运行
-        </span></button>
-		</div>
-	</div>
-	<h3 id="bu-tong-chi-cun">
-		<a href="https://element.eleme.cn/#/zh-CN/component/button#bu-tong-chi-cun" aria-hidden="true" class="header-anchor">¶</a> 不同尺寸
-	</h3>
-	<p>Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。</p>
-	<div class="demo-block demo-zh-CN demo-button">
-		<div class="source">
-			<div>
-				<div class="el-row">
-					<button type="button" class="el-button el-button--default"><!----><!----><span>默认按钮</span></button>
-					<button type="button" class="el-button el-button--default el-button--medium"><!----><!----><span>中等按钮</span>
-					</button>
-					<button type="button" class="el-button el-button--default el-button--small"><!----><!----><span>小型按钮</span>
-					</button>
-					<button type="button" class="el-button el-button--default el-button--mini"><!----><!----><span>超小按钮</span>
-					</button>
-				</div>
-				<div class="el-row">
-					<button type="button" class="el-button el-button--default is-round"><!----><!----><span>默认按钮</span></button>
-					<button type="button" class="el-button el-button--default el-button--medium is-round"><!----><!----><span>中等按钮</span>
-					</button>
-					<button type="button" class="el-button el-button--default el-button--small is-round"><!----><!----><span>小型按钮</span>
-					</button>
-					<button type="button" class="el-button el-button--default el-button--mini is-round"><!----><!----><span>超小按钮</span>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="meta">
-			<div class="description">
-				<div><p>额外的尺寸：<code>medium</code>、<code>small</code>、<code>mini</code>，通过设置<code>size</code>属性来配置它们。</p></div>
-			</div>
-			<div class="highlight"><pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-row</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span>&gt;</span>默认按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"medium"</span>&gt;</span>中等按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"small"</span>&gt;</span>小型按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"mini"</span>&gt;</span>超小按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-row</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">el-row</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">round</span>&gt;</span>默认按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"medium"</span> <span class="hljs-attr">round</span>&gt;</span>中等按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"small"</span> <span class="hljs-attr">round</span>&gt;</span>小型按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"mini"</span> <span class="hljs-attr">round</span>&gt;</span>超小按钮<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">el-row</span>&gt;</span>
-</code></pre>
-			</div>
-		</div>
-		<div class="demo-block-control"><i class="el-icon-caret-bottom"></i><span style="display: none;">显示代码</span>
-			<button type="button" class="el-button control-button el-tooltip el-button--text el-button--small" aria-describedby="el-tooltip-9884" tabindex="0" style="display: none;"><!----><!----><span>
-          在线运行
-        </span></button>
-		</div>
-	</div>
-	<h3 id="attributes">
-		<a href="https://element.eleme.cn/#/zh-CN/component/button#attributes" aria-hidden="true" class="header-anchor">¶</a> Attributes
-	</h3>
-	<table>
-		<thead>
-		<tr>
-			<th>参数</th>
-			<th>说明</th>
-			<th>类型</th>
-			<th>可选值</th>
-			<th>默认值</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>size</td>
-			<td>尺寸</td>
-			<td>string</td>
-			<td>medium / small / mini</td>
-			<td>—</td>
-		</tr>
-		<tr>
-			<td>type</td>
-			<td>类型</td>
-			<td>string</td>
-			<td>primary / success / warning / danger / info / text</td>
-			<td>—</td>
-		</tr>
-		<tr>
-			<td>plain</td>
-			<td>是否朴素按钮</td>
-			<td>boolean</td>
-			<td>—</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>round</td>
-			<td>是否圆角按钮</td>
-			<td>boolean</td>
-			<td>—</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>circle</td>
-			<td>是否圆形按钮</td>
-			<td>boolean</td>
-			<td>—</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>loading</td>
-			<td>是否加载中状态</td>
-			<td>boolean</td>
-			<td>—</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>disabled</td>
-			<td>是否禁用状态</td>
-			<td>boolean</td>
-			<td>—</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>icon</td>
-			<td>图标类名</td>
-			<td>string</td>
-			<td>—</td>
-			<td>—</td>
-		</tr>
-		<tr>
-			<td>autofocus</td>
-			<td>是否默认聚焦</td>
-			<td>boolean</td>
-			<td>—</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>native-type</td>
-			<td>原生 type 属性</td>
-			<td>string</td>
-			<td>button / submit / reset</td>
-			<td>button</td>
-		</tr>
-		</tbody>
-	</table>
-</section>
+			<template slot="source"><element-demo6 /></template>
+			<template slot="highlight"><pre v-pre><code class="html">&lt;el-row&gt;
+  &lt;el-button&gt;默认按钮&lt;/el-button&gt;
+  &lt;el-button size=&quot;medium&quot;&gt;中等按钮&lt;/el-button&gt;
+  &lt;el-button size=&quot;small&quot;&gt;小型按钮&lt;/el-button&gt;
+  &lt;el-button size=&quot;mini&quot;&gt;超小按钮&lt;/el-button&gt;
+&lt;/el-row&gt;
+&lt;el-row&gt;
+  &lt;el-button round&gt;默认按钮&lt;/el-button&gt;
+  &lt;el-button size=&quot;medium&quot; round&gt;中等按钮&lt;/el-button&gt;
+  &lt;el-button size=&quot;small&quot; round&gt;小型按钮&lt;/el-button&gt;
+  &lt;el-button size=&quot;mini&quot; round&gt;超小按钮&lt;/el-button&gt;
+&lt;/el-row&gt;
+</code></pre></template></demo-block><h3 id="attributes"><a class="header-anchor" href="#attributes">¶</a> Attributes</h3>
+		<table>
+			<thead>
+			<tr>
+				<th>参数</th>
+				<th>说明</th>
+				<th>类型</th>
+				<th>可选值</th>
+				<th>默认值</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>size</td>
+				<td>尺寸</td>
+				<td>string</td>
+				<td>medium / small / mini</td>
+				<td>—</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>类型</td>
+				<td>string</td>
+				<td>primary / success / warning / danger / info / text</td>
+				<td>—</td>
+			</tr>
+			<tr>
+				<td>plain</td>
+				<td>是否朴素按钮</td>
+				<td>boolean</td>
+				<td>—</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>round</td>
+				<td>是否圆角按钮</td>
+				<td>boolean</td>
+				<td>—</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>circle</td>
+				<td>是否圆形按钮</td>
+				<td>boolean</td>
+				<td>—</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>loading</td>
+				<td>是否加载中状态</td>
+				<td>boolean</td>
+				<td>—</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>disabled</td>
+				<td>是否禁用状态</td>
+				<td>boolean</td>
+				<td>—</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>icon</td>
+				<td>图标类名</td>
+				<td>string</td>
+				<td>—</td>
+				<td>—</td>
+			</tr>
+			<tr>
+				<td>autofocus</td>
+				<td>是否默认聚焦</td>
+				<td>boolean</td>
+				<td>—</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>native-type</td>
+				<td>原生 type 属性</td>
+				<td>string</td>
+				<td>button / submit / reset</td>
+				<td>button</td>
+			</tr>
+			</tbody>
+		</table>
+
+	</section>
+</template>
+<script>
+  export default {
+    name: 'component-doc',
+    components: {
+      "element-demo0": (function() {
+
+        var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('el-row',[_c('el-button',[_vm._v("默认按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"}},[_vm._v("主要按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"success"}},[_vm._v("成功按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"info"}},[_vm._v("信息按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"warning"}},[_vm._v("警告按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"danger"}},[_vm._v("危险按钮")])],1),_vm._v(" "),_c('el-row',[_c('el-button',{attrs:{"plain":""}},[_vm._v("朴素按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","plain":""}},[_vm._v("主要按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"success","plain":""}},[_vm._v("成功按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"info","plain":""}},[_vm._v("信息按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"warning","plain":""}},[_vm._v("警告按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"danger","plain":""}},[_vm._v("危险按钮")])],1),_vm._v(" "),_c('el-row',[_c('el-button',{attrs:{"round":""}},[_vm._v("圆角按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","round":""}},[_vm._v("主要按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"success","round":""}},[_vm._v("成功按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"info","round":""}},[_vm._v("信息按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"warning","round":""}},[_vm._v("警告按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"danger","round":""}},[_vm._v("危险按钮")])],1),_vm._v(" "),_c('el-row',[_c('el-button',{attrs:{"icon":"el-icon-search","circle":""}}),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","icon":"el-icon-edit","circle":""}}),_vm._v(" "),_c('el-button',{attrs:{"type":"success","icon":"el-icon-check","circle":""}}),_vm._v(" "),_c('el-button',{attrs:{"type":"info","icon":"el-icon-message","circle":""}}),_vm._v(" "),_c('el-button',{attrs:{"type":"warning","icon":"el-icon-star-off","circle":""}}),_vm._v(" "),_c('el-button',{attrs:{"type":"danger","icon":"el-icon-delete","circle":""}})],1)],1)}
+        var staticRenderFns = []
+
+
+        const democomponentExport = {}
+        return {
+          render,
+          staticRenderFns,
+          ...democomponentExport
+        }
+      })(),"element-demo1": (function() {
+
+        var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('el-row',[_c('el-button',{attrs:{"disabled":""}},[_vm._v("默认按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","disabled":""}},[_vm._v("主要按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"success","disabled":""}},[_vm._v("成功按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"info","disabled":""}},[_vm._v("信息按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"warning","disabled":""}},[_vm._v("警告按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"danger","disabled":""}},[_vm._v("危险按钮")])],1),_vm._v(" "),_c('el-row',[_c('el-button',{attrs:{"plain":"","disabled":""}},[_vm._v("朴素按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","plain":"","disabled":""}},[_vm._v("主要按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"success","plain":"","disabled":""}},[_vm._v("成功按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"info","plain":"","disabled":""}},[_vm._v("信息按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"warning","plain":"","disabled":""}},[_vm._v("警告按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"danger","plain":"","disabled":""}},[_vm._v("危险按钮")])],1)],1)}
+        var staticRenderFns = []
+
+
+        const democomponentExport = {}
+        return {
+          render,
+          staticRenderFns,
+          ...democomponentExport
+        }
+      })(),"element-demo2": (function() {
+
+        var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('el-button',{attrs:{"type":"text"}},[_vm._v("文字按钮")]),_vm._v(" "),_c('el-button',{attrs:{"type":"text","disabled":""}},[_vm._v("文字按钮")])],1)}
+        var staticRenderFns = []
+
+
+        const democomponentExport = {}
+        return {
+          render,
+          staticRenderFns,
+          ...democomponentExport
+        }
+      })(),"element-demo3": (function() {
+
+        var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-edit"}}),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","icon":"el-icon-share"}}),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","icon":"el-icon-delete"}}),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","icon":"el-icon-search"}},[_vm._v("搜索")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"}},[_vm._v("上传"),_c('i',{staticClass:"el-icon-upload el-icon--right"})])],1)}
+        var staticRenderFns = []
+
+
+        const democomponentExport = {}
+        return {
+          render,
+          staticRenderFns,
+          ...democomponentExport
+        }
+      })(),"element-demo4": (function() {
+
+        var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('el-button-group',[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-arrow-left"}},[_vm._v("上一页")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"}},[_vm._v("下一页"),_c('i',{staticClass:"el-icon-arrow-right el-icon--right"})])],1),_vm._v(" "),_c('el-button-group',[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-edit"}}),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","icon":"el-icon-share"}}),_vm._v(" "),_c('el-button',{attrs:{"type":"primary","icon":"el-icon-delete"}})],1)],1)}
+        var staticRenderFns = []
+
+
+        const democomponentExport = {}
+        return {
+          render,
+          staticRenderFns,
+          ...democomponentExport
+        }
+      })(),"element-demo5": (function() {
+
+        var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('el-button',{attrs:{"type":"primary","loading":true}},[_vm._v("加载中")])],1)}
+        var staticRenderFns = []
+
+
+        const democomponentExport = {}
+        return {
+          render,
+          staticRenderFns,
+          ...democomponentExport
+        }
+      })(),"element-demo6": (function() {
+
+        var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('el-row',[_c('el-button',[_vm._v("默认按钮")]),_vm._v(" "),_c('el-button',{attrs:{"size":"medium"}},[_vm._v("中等按钮")]),_vm._v(" "),_c('el-button',{attrs:{"size":"small"}},[_vm._v("小型按钮")]),_vm._v(" "),_c('el-button',{attrs:{"size":"mini"}},[_vm._v("超小按钮")])],1),_vm._v(" "),_c('el-row',[_c('el-button',{attrs:{"round":""}},[_vm._v("默认按钮")]),_vm._v(" "),_c('el-button',{attrs:{"size":"medium","round":""}},[_vm._v("中等按钮")]),_vm._v(" "),_c('el-button',{attrs:{"size":"small","round":""}},[_vm._v("小型按钮")]),_vm._v(" "),_c('el-button',{attrs:{"size":"mini","round":""}},[_vm._v("超小按钮")])],1)],1)}
+        var staticRenderFns = []
+
+
+        const democomponentExport = {}
+        return {
+          render,
+          staticRenderFns,
+          ...democomponentExport
+        }
+      })(),
+    }
+  }
+</script>
+
 </body>
 </html>

@@ -43,21 +43,25 @@ const mdContainer = require('markdown-it-container');
 
 module.exports = md => {
   md.use(mdContainer, 'demo', {
+    // 判断块级后的标签是否是demo，例如 :::demo
     validate(params) {
       return params.trim().match(/^demo\s*(.*)$/);
     },
+    // 改写块级内的渲染规则
     render(tokens, idx) {
+      // 1. 获得 :::demo 后面的文字内容
       // match的参数放正则的话，返回的是数组
       const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
 
-      // 开
+      // open标签
       if (tokens[idx].nesting === 1) {
 
-        // ":::demo" 后面的描述信息
+        // 1.1 ":::demo" 后面的描述信息
         const description = m && m.length > 1 ? m[1] : ''
-        // 下一个 :::html 中的内容，即 template模板
+        // 2. 获得 :::html中的内容
+        // 当前的规则是下一个 :::html 中的内容，即 template模板
         const content = tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : ''
-        // 套上 <demo-block> 壳子，调用 <demo-block> 组件，内部是demo-block组件的slot
+        // 3. 套上 <demo-block> 壳子，调用 <demo-block> 组件，内部是demo-block组件的slot
         // 此时 ```html 还在，下面这段是写在 :::demo 里面
         return `<demo-block>
         ${description ? `<div>${md.render(description)}</div>` : ''}
@@ -69,7 +73,7 @@ module.exports = md => {
     }
   });
 
-  // 使用固定的模板
+  // 5. 使用固定的模板
   // 如果遇到 :::warning 就再在div上添加 class='tip'
   md.use(mdContainer, 'tip');
   md.use(mdContainer, 'warning');
