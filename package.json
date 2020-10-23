@@ -1,0 +1,57 @@
+{
+  "name": "read-element-ui",
+  "version": "1.2.0",
+  "private": true,
+  "description": "本篇文档将介绍element-ui内的源代码。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "samples": "samples"
+  },
+  "scripts": {
+    "prettier": "prettier --write README.md",
+    "ct": "git add . && git-cz",
+    "release": "standard-version --no-verify --header '# Changelog'"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crazyvalse/read-element-ui"
+  },
+  "workspaces": [
+    "samples/*"
+  ],
+  "keywords": [
+    "vue",
+    "element-ui"
+  ],
+  "author": "IsaacGu",
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "3.3.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "2.1.2",
+    "replace": "^1.2.0",
+    "standard-version": "^9.0.0",
+    "yorkie": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "skip": {
+      "commit": true,
+      "tag": true
+    }
+  }
+}

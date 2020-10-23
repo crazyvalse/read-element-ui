@@ -93,14 +93,22 @@ element-dev-2.13.2/
 
 ```
 
-- name: 【必须字段】当前模块/包名称。这个名字会作为参数被传入require()，所以它应该短且意义清晰。长度必须小于等于214个字符，不能以"."(点)或者"_"(下划线)开头，不能包含大写字母
+- name: 【必须字段】当前模块/包名称。这个名字会作为参数被传入require()，所以它应该短且意义清晰。长度必须小于等于214个字符，不能以"."(点)或者"_"(下划线)开头，不能包含大写字母。
 - version: 【必须字段】当前包的版本号，初次建立默认为1.0.0 (格式：大版本.次要版本.小版本)。这个字段可以显示当前项目的版本迭代进度。
 - description: 当前包的描述信息，是一个字符串。这个字段有助于别人搜索你的项目。如果 package.json 中没有这个字段，npm使用项目中的 `README.md` 的第一行作为描述信息。
 - main: 指定了项目加载的入口文件。 默认值是根目录下的 `index.js`。
-- scripts: scripts是一个由脚本命令组成的对象，他们在包不同的生命周期中被执行。key是生命周期事件，value是要运行的命令。细节可以参考 [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html).
+- scripts: scripts是一个由脚本命令组成的对象，他们在包不同的生命周期中被执行。key是生命周期事件，value是要运行的命令。细节可以参考 [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html) 。
 - files: 在我们使用 `npm publish` 命令后推送到 `npm` 服务器的文件列表，如果指定文件夹，则文件夹内的所有内容都会包含进来。
+- faas: 与部署相关。
+- repository: 代码存放的类型。
+- homepage: 项目主页或者文档首页。
+- keywords: 当在包管理器里搜索包时很有用。
+- license: 开源协议。
+- unpkg: 让npm上所有的文件都开启 cdn 服务。详细可阅读 [package.json 非官方字段集合](https://segmentfault.com/a/1190000016365409) 。
+- style: 声明当前模块包含style部分，并制定入口文件
 
 ## 推荐文章
 
 - package.json详解: https://juejin.im/post/6844904114762022926
 - 重新认识 package.json: https://juejin.im/post/6844904159226003463
+- 文件 package.json 的说明文档: https://juejin.im/post/6844903894099689485
