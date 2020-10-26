@@ -51,8 +51,8 @@
 - 主题色：在 `props`中定义 `type` 属性，并在组件最外层的 div 上绑定一个`主题class`，根据 `type` 动态改变 `class`。
 - 文本：在 `props` 中定义 `title` 属性，用来接收外部注入的 "提示文案"。
 - 为了增强体验，我们添加一个 `transition` 标签来体现消失效果。
-- 为了增强可定义性，当点击关闭按钮时，对外抛出一个 `close` 事件。
-  简码：
+
+简码：
 
 html
 
@@ -133,15 +133,27 @@ export default {
 </script>
 ```
 
-### 带有 icon
+### 自定义关闭按钮
 
-- 带有 icon：自定义关闭按钮：自定义关闭按钮为文字或其他符号。
-
-- closable：是否可关闭。- 是否可关闭：在关闭的标签上定义 `v-show` 或者 `v-if`，根据 `closable` 的值来决定是否显示 关闭标签。
+自定义关闭按钮为文字或其他符号。
 
 ![](../../assets/imgs/alert/3.png)
 
-- 带有 icon：表示某种状态时提升可读性。
+实现思路：
+
+- 不可关闭：在关闭的标签上定义 `v-show` 或者 `v-if`，根据 `closable`(props) 的值来决定是否显示 关闭标签。
+- 自定义 `close-text`：定义 `props` 中的 `closeText` 属性，并根据该属性来判断是直接显示自定义文字还是显示文字图标。
+- 设置了回调：绑定一个 `click` 事件，点击按钮时，`emit` 该事件。
+
+html
+
+```vue
+<div>
+  <i :class="{ 'is-customed': closeText !== '', 'el-icon-close': closeText === '' }" v-show="closable" @click="close()">{{closeText}}</i>
+</div>
+```
+
+### 带有 icon：表示某种状态时提升可读性。
 
 ![](../../assets/imgs/alert/4.png)
 
