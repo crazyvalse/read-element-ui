@@ -17,6 +17,7 @@
       </div>
     </div>
   </transition>
+
 </template>
 
 <script type="text/babel">
