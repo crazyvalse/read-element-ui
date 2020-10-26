@@ -1,7 +1,5 @@
 # Element 组件分析——Alert
 
-由于这篇文档肩负着 `分享` 和 `阅读`
-
 ## TL;DR
 
 本质上讲开源项目也是普通的工程，里面的每一个组件都可以当成是一个普通的 UI 组件。因此，我们按照开发流程的角度来看待 `element-ui` 中的代码(组件)。
@@ -11,31 +9,41 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [需求](#%E9%9C%80%E6%B1%82)
+- [分析设计](#%E5%88%86%E6%9E%90%E8%AE%BE%E8%AE%A1)
   - [1. 基本用法](#1-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95)
+    - [需求](#%E9%9C%80%E6%B1%82)
+    - [分析](#%E5%88%86%E6%9E%90)
+    - [实现思路](#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+    - [示例简码](#%E7%A4%BA%E4%BE%8B%E7%AE%80%E7%A0%81)
   - [2. 主题](#2-%E4%B8%BB%E9%A2%98)
-  - [自定义关闭按钮](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE)
-  - [带有 icon](#%E5%B8%A6%E6%9C%89-icon)
-  - [文字居中](#%E6%96%87%E5%AD%97%E5%B1%85%E4%B8%AD)
-  - [带有辅助性文字介绍](#%E5%B8%A6%E6%9C%89%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
-  - [带有 icon 和辅助性文字介绍：](#%E5%B8%A6%E6%9C%89-icon-%E5%92%8C%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
+  - [3. 自定义关闭按钮](#3-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE)
+  - [4. 带有 icon](#4-%E5%B8%A6%E6%9C%89-icon)
+  - [5. 文字居中](#5-%E6%96%87%E5%AD%97%E5%B1%85%E4%B8%AD)
+  - [6. 带有辅助性文字介绍](#6-%E5%B8%A6%E6%9C%89%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
+  - [7. 带有 icon 和辅助性文字介绍：](#7-%E5%B8%A6%E6%9C%89-icon-%E5%92%8C%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
+- [具体实现](#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
+  - [布局](#%E5%B8%83%E5%B1%80)
 - [总结](#%E6%80%BB%E7%BB%93)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 分析设计
 
-`Alert 警告` 组件用于页面中展示重要的提示信息。我们将根据需求设计出每个功能点的实现思路。
+`Alert 警告` 组件用于页面中展示重要的提示信息。我们将根据**需求**设计出每个功能点的实现思路。
 
-详细内容请阅读 [element ui- alert 警告](https://element.eleme.cn/#/zh-CN/component/alert)
+详细内容请阅读 [element ui/组件/alert 警告](https://element.eleme.cn/#/zh-CN/component/alert)
 
 ### 1. 基本用法
+
+#### 需求
 
 页面中的非浮层元素，不会自动消失。点击关闭按钮的时候，提示条消失。
 
 ![](../../assets/imgs/alert/1.png)
 
-分析：从以上的**需求描述**及**示例图**中，我们可以获得以下需求点：
+#### 分析
+
+从以上的**需求描述**及**示例图**中，我们可以获得以下需求点：
 
 - 非浮层元素，不会自动消失
 - 可关闭
@@ -44,12 +52,16 @@
 
 既然是通用的 UI 组件，那么组件需要对外暴露可以修改的属性(props)以及回调方法(\$emit())，以方便外部自定义属性和方法。
 
+#### 实现思路
+
 经过分析可以得到以下的实现思路：
 
-- 非浮层元素，不会自动消失： 使用 div 来实现这个组件。
-- 可关闭：在 `data` 中定义 `visible` 属性，并在点击关闭按钮时，设置 `this.visible = false`.
-- 主题色：在 `props`中定义 `type` 属性，并在组件最外层的 div 上绑定一个`主题class`，根据 `type` 动态改变 `class`。例如： `<div :class="['el-alert--' + type]" />`
-- 文本：在 `props` 中定义 `title` 属性，用来接收外部注入的 "提示文案"。
+- 非浮层元素，不会自动消失：使用 div 来实现这个组件。
+- 可关闭：在 `data` 中定义 `visible` 属性，当点击**关闭按钮**时，设置 `this.visible = false`.
+- 主题色：在 `props`中定义 `type` 属性，并在组件最外层的 div 上绑定一个 `class` 。根据 `type` 动态改变 `class`。例如： `<div :class="['el-alert--' + type]" />`
+- 文本：在 `props` 中定义 `title` 属性，接收外部传递的标题。
+
+#### 示例简码
 
 html
 
