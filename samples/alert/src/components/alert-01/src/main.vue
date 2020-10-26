@@ -1,10 +1,8 @@
 <template>
-  <transition>
-    <div :class="['el-alert--' + type]" v-show="visible">
-      <div>{{ title }}</div>
-      <i class="el-icon-close" />
-    </div>
-  </transition>
+  <div :class="['el-alert--' + type]" v-show="visible">
+    <div>{{ title }}</div>
+    <i class="el-icon-close" @click="close" />
+  </div>
 </template>
 
 <script>
@@ -28,7 +26,6 @@ export default {
   methods: {
     close() {
       this.visible = false
-      this.$emit('close')
     }
   }
 }

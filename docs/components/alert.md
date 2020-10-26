@@ -11,23 +11,23 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [需求分析](#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90)
-- [具体实现](#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
-  - [整体](#%E6%95%B4%E4%BD%93)
-    - [思考](#%E6%80%9D%E8%80%83)
-  - [最外层](#%E6%9C%80%E5%A4%96%E5%B1%82)
-  - [图标](#%E5%9B%BE%E6%A0%87)
-  - [主体内容](#%E4%B8%BB%E4%BD%93%E5%86%85%E5%AE%B9)
-    - [标题](#%E6%A0%87%E9%A2%98)
-    - [警告描述](#%E8%AD%A6%E5%91%8A%E6%8F%8F%E8%BF%B0)
-    - [关闭按钮](#%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE)
+- [需求](#%E9%9C%80%E6%B1%82)
+  - [1. 基本用法](#1-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95)
+  - [2. 主题](#2-%E4%B8%BB%E9%A2%98)
+  - [自定义关闭按钮](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE)
+  - [带有 icon](#%E5%B8%A6%E6%9C%89-icon)
+  - [文字居中](#%E6%96%87%E5%AD%97%E5%B1%85%E4%B8%AD)
+  - [带有辅助性文字介绍](#%E5%B8%A6%E6%9C%89%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
+  - [带有 icon 和辅助性文字介绍：](#%E5%B8%A6%E6%9C%89-icon-%E5%92%8C%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
 - [总结](#%E6%80%BB%E7%BB%93)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## 需求
+## 分析设计
 
-`Alert 警告` 组件用于页面中展示重要的提示信息。
+`Alert 警告` 组件用于页面中展示重要的提示信息。我们将根据需求设计出每个功能点的实现思路。
+
+详细内容请阅读 [element ui- alert 警告](https://element.eleme.cn/#/zh-CN/component/alert)
 
 ### 1. 基本用法
 
@@ -48,21 +48,16 @@
 
 - 非浮层元素，不会自动消失： 使用 div 来实现这个组件。
 - 可关闭：在 `data` 中定义 `visible` 属性，并在点击关闭按钮时，设置 `this.visible = false`.
-- 主题色：在 `props`中定义 `type` 属性，并在组件最外层的 div 上绑定一个`主题class`，根据 `type` 动态改变 `class`。
+- 主题色：在 `props`中定义 `type` 属性，并在组件最外层的 div 上绑定一个`主题class`，根据 `type` 动态改变 `class`。例如： `<div :class="['el-alert--' + type]" />`
 - 文本：在 `props` 中定义 `title` 属性，用来接收外部注入的 "提示文案"。
-- 为了增强体验，我们添加一个 `transition` 标签来体现消失效果。
-
-简码：
 
 html
 
 ```vue
-<transition>
-  <div :class="['el-alert--' + type]" v-show="visible">
-    <div>{{ title }}</div>
-    <i>x</i>
-  </div>
-</transition>
+<div :class="['el-alert--' + type]" v-show="visible">
+  <div>{{ title }}</div>
+  <i class="el-icon-close" @click="close" />
+</div>
 ```
 
 script
@@ -88,7 +83,6 @@ export default {
   methods: {
     close() {
       this.visible = false
-      this.$emit('close')
     }
   }
 }
@@ -133,7 +127,7 @@ export default {
 </script>
 ```
 
-### 自定义关闭按钮
+### 3. 自定义关闭按钮
 
 自定义关闭按钮为文字或其他符号。
 
@@ -153,52 +147,130 @@ html
 </div>
 ```
 
-### 带有 icon：表示某种状态时提升可读性。
+### 4. 带有 icon
+
+表示某种状态时提升可读性。
 
 ![](../../assets/imgs/alert/4.png)
 
-- 文字居中：使用 center 属性让文字水平居中。
+实现思路
+
+- 在 `props` 中定义一个 `showIcon` 属性。
+- 根据该属性来判断是否显示 icon。
+- 根据 `props` 中的 `type` 决定显示哪个 icon。
+
+html
+
+```vue
+<i :class="'el-icon-' + type" v-if="showIcon"></i>
+```
+
+script
+
+```vue
+<script>
+export default {
+  props: {
+    // 判断提示的类型
+    type: {
+      type: String,
+      default: 'info'
+    },
+    // 判断是否显示 icon
+    showIcon: {
+      type: Boolean,
+      default: true
+    }
+  }
+}
+</script>
+```
+
+### 5. 文字居中
+
+使用 center 属性让文字水平居中。
 
 ![](../../assets/imgs/alert/5.png)
 
-- 带有辅助性文字介绍：包含标题和内容，解释更详细的警告。
+实现思路：
+
+- 在 `props` 中定义一个 `center` 属性。
+- 根据该属性来决定是否使用 `is-center` 这个 class。
+
+html
+
+```vue
+<div :class="[center ? 'is-center' : '']">
+  ...
+</div>
+```
+
+script
+
+```vue
+<script>
+export default {
+  props: {
+    center: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
+</script>
+```
+
+### 6. 带有辅助性文字介绍
+
+包含标题和内容，解释更详细的警告。
 
 ![](../../assets/imgs/alert/6.png)
 
-- 带有 icon 和辅助性文字介绍：
+实现思路
+
+- 在 `props` 中定义 `description` 属性。
+- 根据该属性来判断是否显示描述信息。
+
+html
+
+```vue
+<p v-if="description">{{ description }}</p>
+```
+
+script
+
+```vue
+<script>
+export default {
+  props: {
+    description: {
+      type: String,
+      default: ''
+    }
+  }
+}
+</script>
+```
+
+### 7. 带有 icon 和辅助性文字介绍：
 
 ![](../../assets/imgs/alert/7.png)
 
-详细内容请阅读 [element ui- alert 警告](https://element.eleme.cn/#/zh-CN/component/alert)
+实现思路：
 
-## 需求分析
+- 定义两个图标样式：大图标和小图标。
+- 根据 `props` 中的 `description` 属性来判断显示大图标或者小图标。
+- 默认是小图标。
 
-### 基本用法
-
-#### 描述：页面中的非浮层元素，不会自动消失。点击关闭按钮的时候，提示条消失。
-
-![](../../assets/imgs/alert/1.png)
-
-- props：title、type(不同类型的主题)、closable(是否可关闭)
-- 不同类型的主题(success/warning/info/error)：
+```vue
+<i :class="description ? 'is-big' : ''"></i>
+```
 
 ## 具体实现
 
-### 整体
+当我们实现一个组件的功能时，最好是从布局开始，然后再逐一实现这个组件中的功能。
 
-#### 思考
-
-### 最外层
-
-### 图标
-
-### 主体内容
-
-#### 标题
-
-#### 警告描述
-
-#### 关闭按钮
+### 布局
 
 ## 总结
 
