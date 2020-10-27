@@ -8,6 +8,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [布局](#%E5%B8%83%E5%B1%80)
+  - [需求](#%E9%9C%80%E6%B1%82)
   - [分析](#%E5%88%86%E6%9E%90)
   - [实现思路](#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
 - [功能设计](#%E5%8A%9F%E8%83%BD%E8%AE%BE%E8%AE%A1)
@@ -44,6 +45,8 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 布局
+
+### 需求
 
 我们根据 [【Alert 警告】文档](https://element.eleme.cn/#/zh-CN/component/alert) 中的介绍可以了解到，这个组件主要是有两种布局、四种配色(x2)、四种图标。
 
