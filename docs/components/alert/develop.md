@@ -17,11 +17,11 @@ TODO
   - [3.1 实现思路](#31-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
   - [3.2 具体实现](#32-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
     - [3.2.1 可关闭](#321-%E5%8F%AF%E5%85%B3%E9%97%AD)
-    - [3.2 主题色](#32-%E4%B8%BB%E9%A2%98%E8%89%B2)
-    - [3.3 文本](#33-%E6%96%87%E6%9C%AC)
-    - [3.4 完善](#34-%E5%AE%8C%E5%96%84)
-    - [3.5 优化](#35-%E4%BC%98%E5%8C%96)
-  - [示例工程](#%E7%A4%BA%E4%BE%8B%E5%B7%A5%E7%A8%8B)
+    - [3.2.2 主题色](#322-%E4%B8%BB%E9%A2%98%E8%89%B2)
+    - [3.2.3 文本](#323-%E6%96%87%E6%9C%AC)
+    - [3.2.4 完善](#324-%E5%AE%8C%E5%96%84)
+    - [3.3 优化](#33-%E4%BC%98%E5%8C%96)
+  - [3.4 示例工程](#34-%E7%A4%BA%E4%BE%8B%E5%B7%A5%E7%A8%8B)
 - [4. 主题](#4-%E4%B8%BB%E9%A2%98)
   - [4.1 实现思路](#41-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
   - [4.2 示例代码](#42-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
@@ -76,10 +76,10 @@ TODO
 
 在这一步中，我们不写任何的功能，只实现静态页面。
 
-- 每一个元素上都需要有一个唯一指定的 `class`，例如 `el-alert__icon`。规则是 `组件名__功能描述`。
+- 每一个元素上都需要有一个唯一指定的 `class`，以便于从外面调整组件的样式，例如 `el-alert__icon`。规则是 `组件名__功能描述`。
 - 最外层 div
   - class:el-alert--{type}: 不同类型的主题色。（info/success/warning/danger）
-  - class:is-{effect}: 明暗两套大的主题。
+  - class:is-{effect}: 明暗两套主题。
 - icon 图标
   - class:el-icon-{type}: 不同种类的文字图标。
   - class:is-big: 显示大图标。
@@ -217,7 +217,7 @@ export default {
 </script>
 ```
 
-#### 3.2 主题色
+#### 3.2.2 主题色
 
 根据 `type(props)` 来决定 `Alert` 组件的颜色。
 
@@ -259,7 +259,7 @@ export default {
 
 ![](../../../assets/imgs/alert/alert-01-basic-1.png)
 
-#### 3.3 文本
+#### 3.2.3 文本
 
 根据 `title(props)` 显示 `Alert` 组件的提示信息。
 
@@ -306,7 +306,7 @@ export default {
 
 ![](../../../assets/imgs/alert/alert-01-basic-2.png)
 
-#### 3.4 完善
+#### 3.2.4 完善
 
 自此 `alert 警告` 组件的基本需求已经完成了。为了提升体验，我们在最外层添加 `transition` 标签，并添加一个动画效果。
 
@@ -317,7 +317,7 @@ export default {
 }
 ```
 
-#### 3.5 优化
+#### 3.3 优化
 
 在页面当中最容易变化的就是 html 和样式，我们应该尽可能地使 html 部分看起来简单、整洁，以便于后期的维护。因此我们把**数据处理**相关的逻辑放到 script 中实现。
 
@@ -342,7 +342,7 @@ export default {
 </script>
 ```
 
-### 示例工程
+### 3.4 示例工程
 
 完整代码：[/src/components/alert-01-basic/src/main.vue](../../../samples/alert/src/components/alert-01-basic/src/main.vue)
 
