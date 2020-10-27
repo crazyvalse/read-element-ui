@@ -108,7 +108,7 @@
 - 主题色：在 `props`中定义 `type` 属性，并在组件最外层的 div 上绑定一个 `class` 。根据 `type` 动态改变 `class`。例如： `<div :class="['el-alert--' + type]" />`
 - 文本：在 `props` 中定义 `title` 属性，接收外部传递的标题。
 
-![](../../../assets/imgs/alert/11.png)
+![](../../../assets/imgs/alert/111.png)
 
 #### 1.4 关键代码
 
