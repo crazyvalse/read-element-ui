@@ -103,10 +103,10 @@
 
 经过分析可以得到以下的实现思路：
 
-- 非浮层元素，不会自动消失：使用 div 来实现这个组件（这是一句废话）。
-- 可关闭：在 `data` 中定义 `visible` 属性，当点击**关闭按钮**时，设置 `this.visible = false`.
-- 主题色：在 `props`中定义 `type` 属性，并在组件最外层的 div 上绑定一个 `class` 。根据 `type` 动态改变 `class`。例如： `<div :class="['el-alert--' + type]" />`
-- 文本：在 `props` 中定义 `title` 属性，接收外部传递的标题。
+1. 非浮层元素，不会自动消失：使用 div 来实现这个组件（这是一句废话）。
+2. 可关闭：在 `data` 中定义 `visible` 属性，当点击**关闭按钮**时，设置 `this.visible = false`.
+3. 主题色：在 `props`中定义 `type` 属性，并在组件最外层的 div 上绑定一个 `class` 。根据 `type` 动态改变 `class`。例如： `<div :class="['el-alert--' + type]" />`
+4. 文本：在 `props` 中定义 `title` 属性，接收外部传递的标题。
 
 ![](../../../assets/imgs/alert/111.png)
 
@@ -205,9 +205,9 @@ export default {
 
 #### 3.2 实现思路
 
-- 不可关闭：在 `props` 定义 `closable` 属性，并根据该值判断(`v-show` 或者 `v-if`)是否显示关闭按钮。考虑到标签复用，可以使用 `v-if` 。
-- 自定义 `close-text`：定义 `props` 中的 `closeText` 属性，并根据该属性来判断是直接显示自定义文字还是显示文字图标。
-- 设置了回调：绑定一个 `click` 事件，点击按钮时，`emit` 该事件。
+1. 不可关闭：在 `props` 中定义 `closable` 属性，并根据该值判断(`v-show` 或者 `v-if`)是否显示关闭按钮。考虑到标签复用，可以使用 `v-if` 。
+2. 自定义 `close-text`：在 `props` 中定义 `closeText` 属性，并根据该属性来判断是直接显示自定义文字还是显示文字图标。
+3. 设置了回调：绑定一个 `click` 事件，点击按钮时，`emit` 该事件。
 
 ![](../../../assets/imgs/alert/33.png)
 
@@ -256,9 +256,8 @@ export default {
 
 #### 4.2 实现思路
 
-- 在 `props` 中定义一个 `showIcon` 属性。
-- 根据该属性来判断是否显示 icon。
-- 根据 `props` 中的 `type` 决定显示哪个 icon。
+1. 在 `props` 中定义一个 `showIcon` 属性，根据该属性来判断是否显示 icon。
+2. 根据 `props` 中的 `type` 决定显示哪个 icon。
 
 ![](../../../assets/imgs/alert/44.png)
 
@@ -301,8 +300,7 @@ export default {
 
 #### 5.2 实现思路
 
-- 在 `props` 中定义一个 `center` 属性。
-- 根据该属性来决定是否使用 `is-center` 这个 class。
+1. 在 `props` 中定义一个 `center` 属性。根据该属性来决定是否使用 `is-center` 这个 class。
 
 ![](../../../assets/imgs/alert/55.png)
 
@@ -342,9 +340,10 @@ export default {
 #### 6.2 实现思路
 
 - 在 `props` 中定义 `description` 属性。
-- 根据该属性来判断是否显示描述信息，
-- 根据该属性来判断是否调整 `title` 的 `font-size`。
-- 如果 `title` 没有内容，单独显示 `description`。
+  - 根据该属性来判断是否显示描述信息。
+  - 根据该属性显示描述文本。
+  - 根据该属性来判断是否调整 `title` 的 `font-size`，即添加 `class="is-bold"`。
+- 如果 `title` 没有内容，可以单独显示 `description`。
 
 ![](../../../assets/imgs/alert/66.png)
 
