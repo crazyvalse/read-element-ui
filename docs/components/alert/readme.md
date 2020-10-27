@@ -1,15 +1,19 @@
-# Element 组件分析 —— Alert
+# 【Element 组件】 — Alert 警告
 
 ## TL;DR
 
-很多同学一提到开源项目的代码，都会"色变"，认为自己的基础不好，不足以读懂源代码。本质上讲开源项目也是普通的工程，我们可以把里面的每一个组件都可以当成是一个普通的 UI 组件。因此，我们按照开发流程的角度来看待 `element-ui` 中的代码(组件)。
+很多同学一提到开源项目的代码，都会"色变"，认为自己的基础不好，不足以单独读懂源代码。本质上，开源项目也是普通的工程，我们可以把 `element-ui` 中的 UI 组件可以当成是普通的组件。为了能让同学快速熟悉 UI 组件的开发流程，这篇文档将按照实际工作中的开发流程来分析(开发) `element-ui` 中的代码。
 
-分别从下面几个流程来分析：
+我们就把 [element 官方文档](https://element.eleme.cn/#/zh-CN/component/quickstart) 作为一个需求文档，然后我们按照这篇文档来实现里面的功能。
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+我们从下面几个流程进行分析：
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+- [需求](https://element.eleme.cn/#/zh-CN/component/alert)
+- 概要设计（省）
+- [详细设计](./analysis.md)
+- 开发
+- 测试
+- 复盘
 
 ## 总结
 
