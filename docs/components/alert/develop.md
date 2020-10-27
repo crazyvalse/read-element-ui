@@ -24,13 +24,17 @@ TODO
   - [示例工程](#%E7%A4%BA%E4%BE%8B%E5%B7%A5%E7%A8%8B)
 - [4. 主题](#4-%E4%B8%BB%E9%A2%98)
   - [4.1 实现思路](#41-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
-  - [4.2 具体实现](#42-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
-  - [自定义关闭按钮](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE)
-    - [3.1 需求](#31-%E9%9C%80%E6%B1%82)
-      - [不可关闭](#%E4%B8%8D%E5%8F%AF%E5%85%B3%E9%97%AD)
-      - [自定义 `close-text`](#%E8%87%AA%E5%AE%9A%E4%B9%89-close-text)
-      - [设置回调](#%E8%AE%BE%E7%BD%AE%E5%9B%9E%E8%B0%83)
-    - [跟 关闭按钮相关的代码](#%E8%B7%9F-%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E4%BB%A3%E7%A0%81)
+  - [4.2 示例代码](#42-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
+    - [4.3 测试](#43-%E6%B5%8B%E8%AF%95)
+    - [4.4 示例工程](#44-%E7%A4%BA%E4%BE%8B%E5%B7%A5%E7%A8%8B)
+- [5. 自定义关闭按钮](#5-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE)
+  - [5.1 实现思路](#51-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+  - [5.2 具体实现](#52-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
+    - [5.2.1 不可关闭](#521-%E4%B8%8D%E5%8F%AF%E5%85%B3%E9%97%AD)
+    - [5.2.2 自定义 `close-text`](#522-%E8%87%AA%E5%AE%9A%E4%B9%89-close-text)
+    - [5.2.3 设置回调](#523-%E8%AE%BE%E7%BD%AE%E5%9B%9E%E8%B0%83)
+  - [5.3 测试](#53-%E6%B5%8B%E8%AF%95)
+  - [5.4 完整代码](#54-%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81)
   - [4. 带有 icon](#4-%E5%B8%A6%E6%9C%89-icon)
     - [4.1 需求](#41-%E9%9C%80%E6%B1%82)
     - [4.2 实现思路](#42-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
@@ -349,7 +353,7 @@ Alert 组件提供两个不同的主题：light 和 dark。
 
 ![](../../../assets/imgs/alert/22.png)
 
-### 4.2 具体实现
+### 4.2 示例代码
 
 ```vue
 <template>
@@ -384,27 +388,40 @@ export default {
 </script>
 ```
 
-测试：在外部传入 `effect="dark"`
+#### 4.3 测试
+
+在父组件调用这个组件并传入 `effect="dark"`，并在浏览器上查看组件是否改变主题。
+
+```vue
+<alert-02-theme type="success" title="这是一个成功的示例" />
+<br />
+<alert-02-theme type="success" title="这是一个成功的示例" effect="dark" />
+```
 
 ![](../../../assets/imgs/alert/alert-02-theme-1.png)
 
+#### 4.4 示例工程
+
 完整代码：[/src/components/alert-02-theme/src/main.vue](../../../samples/alert/src/components/alert-02-theme/src/main.vue)
 
-### 自定义关闭按钮
-
-#### 3.1 需求
+## 5. 自定义关闭按钮
 
 自定义关闭按钮为文字或其他符号。
 
-![](../../../assets/imgs/alert/3.png)
+### 5.1 实现思路
 
-- 不可关闭：在关闭的标签上定义 `v-show` 或者 `v-if`，根据 `closable`(props) 的值来决定是否显示 关闭标签。
-- 自定义 `close-text`：定义 `props` 中的 `closeText` 属性，并根据该属性来判断是直接显示自定义文字还是显示文字图标。
-- 设置了回调：绑定一个 `click` 事件，点击按钮时，`emit` 该事件。
+![](../../../assets/imgs/alert/33.png)
 
-##### 不可关闭
+1. 不可关闭：在 `props` 中定义 `closable` 属性，并根据该值判断(`v-show` 或者 `v-if`)是否显示关闭按钮。考虑到标签复用，可以使用 `v-if` 。
+2. 自定义 `close-text`：在 `props` 中定义 `closeText` 属性，并根据该属性来判断是直接显示自定义文字还是显示文字图标。
+3. 设置了回调：绑定一个 `click` 事件，点击按钮时，`emit` 该事件。
 
-在关闭的标签上定义 `v-show` 或者 `v-if`，根据 `closable`(props) 的值来决定是否显示 关闭标签。
+### 5.2 具体实现
+
+#### 5.2.1 不可关闭
+
+1. 定义 `props` 中的 `closable` 属性
+2. 根据 `closable`(props) 的值来决定是否显示(`v-show` 或者 `v-if`) **关闭标签**。
 
 ```vue
 <template>
@@ -424,11 +441,11 @@ export default {
 </script>
 ```
 
-##### 自定义 `close-text`
+#### 5.2.2 自定义 `close-text`
 
-定义 `props` 中的 `closeText` 属性，并根据该属性来判断是直接显示自定义文字还是显示文字图标。
-
-- 使用 computed 来判断是使用自定义文字还是文字图标。
+1. 定义 `props` 中的 `closeText` 属性
+2. 根据该属性来判断是直接显示自定义文字还是显示文字图标。
+3. 使用 computed 来判断是使用自定义文字还是文字图标
 
 ```vue
 <template>
@@ -440,6 +457,7 @@ export default {
 export default {
   computed: {
     closeClass() {
+      // 使用 computed 来判断是使用自定义文字还是文字图标
       return this.closeText === '' ? 'el-icon-close' : 'is-customed'
     }
   }
@@ -447,29 +465,9 @@ export default {
 </script>
 ```
 
-##### 设置回调
+#### 5.2.3 设置回调
 
-绑定一个 `click` 事件，点击按钮时，`emit` 该事件。
-
-```vue
-<template>
-  <i class="el-alert__closebtn" @click="close">
-    {{ closeText }}
-  </i>
-</template>
-<script>
-export default {
-  methods: {
-    close() {
-      this.visible = false
-      this.$emit('close')
-    }
-  }
-}
-</script>
-```
-
-#### 跟 关闭按钮相关的代码
+1. 在 `close()` 方法中添加 `emit` 事件。
 
 ```vue
 <template>
@@ -488,6 +486,7 @@ export default {
   methods: {
     close() {
       this.visible = false
+      // 1. 在 `close()` 方法中添加 `emit` 事件。
       this.$emit('close')
     }
   },
@@ -500,7 +499,9 @@ export default {
 </script>
 ```
 
-测试：
+### 5.3 测试
+
+在父组件调用这个组件，并传入不同属性，查看是否符合预期。
 
 ```vue
 <alert-03-close-btn type="success" title="不可关闭的alert" :closable="false" />
@@ -511,6 +512,8 @@ export default {
 ```
 
 ![](../../../assets/imgs/alert/alert-03-close-btn-1.png)
+
+### 5.4 完整代码
 
 完整代码：[/src/components/alert-03-close-btn/src/main.vue](../../../samples/alert/src/components/alert-03-close-btn/src/main.vue)
 
