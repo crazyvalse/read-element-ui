@@ -51,7 +51,14 @@
       <template v-slot:title>这是个title slot</template>
       <template>这是说明slot，这是说明slot，这是说明slot，这是说明slot，这是说明slot，这是说明slot</template>
     </alert-08-slot>
-    <br />
+    <hr />
+    alert-09-optimization
+    <alert-09-optimization
+        type="success"
+        title="带辅助性的文字介绍"
+        description="文字说明文字说明文字说明文字说明文字说明文字说明"
+        :show-icon="true"
+    />
   </div>
 </template>
 

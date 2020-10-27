@@ -13,6 +13,7 @@ import Alert05 from './components/alert-05-center'
 import Alert06 from './components/alert-06-description'
 import Alert07 from './components/alert-07-description-icon'
 import Alert08 from './components/alert-08-slot'
+import Alert09 from './components/alert-09-optimization'
 
 Vue.config.productionTip = false
 
@@ -27,6 +28,7 @@ Vue.use(Alert05)
 Vue.use(Alert06)
 Vue.use(Alert07)
 Vue.use(Alert08)
+Vue.use(Alert09)
 
 new Vue({
   render: h => h(App)
