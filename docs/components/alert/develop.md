@@ -7,21 +7,24 @@ TODO
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [布局](#%E5%B8%83%E5%B1%80)
-  - [思路](#%E6%80%9D%E8%B7%AF)
-  - [实现](#%E5%AE%9E%E7%8E%B0)
-  - [测试](#%E6%B5%8B%E8%AF%95)
-  - [示例代码](#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
+- [1. 布局](#1-%E5%B8%83%E5%B1%80)
+  - [1.1 思路](#11-%E6%80%9D%E8%B7%AF)
+  - [1.2 实现](#12-%E5%AE%9E%E7%8E%B0)
+  - [1.3 测试](#13-%E6%B5%8B%E8%AF%95)
+  - [1.4 示例代码](#14-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
 - [2. 隐藏不需要的页面元素](#2-%E9%9A%90%E8%97%8F%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0)
-  - [3. 基本功能](#3-%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD)
+- [3. 基本功能](#3-%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD)
   - [3.1 实现思路](#31-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
   - [3.2 具体实现](#32-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
     - [3.2.1 可关闭](#321-%E5%8F%AF%E5%85%B3%E9%97%AD)
     - [3.2 主题色](#32-%E4%B8%BB%E9%A2%98%E8%89%B2)
-  - [3.3 文本](#33-%E6%96%87%E6%9C%AC)
-  - [3.4 完善](#34-%E5%AE%8C%E5%96%84)
-  - [3.5 优化](#35-%E4%BC%98%E5%8C%96)
-- [主题](#%E4%B8%BB%E9%A2%98)
+    - [3.3 文本](#33-%E6%96%87%E6%9C%AC)
+    - [3.4 完善](#34-%E5%AE%8C%E5%96%84)
+    - [3.5 优化](#35-%E4%BC%98%E5%8C%96)
+  - [示例工程](#%E7%A4%BA%E4%BE%8B%E5%B7%A5%E7%A8%8B)
+- [4. 主题](#4-%E4%B8%BB%E9%A2%98)
+  - [4.1 实现思路](#41-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+  - [4.2 具体实现](#42-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
   - [自定义关闭按钮](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE)
     - [3.1 需求](#31-%E9%9C%80%E6%B1%82)
       - [不可关闭](#%E4%B8%8D%E5%8F%AF%E5%85%B3%E9%97%AD)
@@ -48,9 +51,9 @@ TODO
 
 示例工程: [samples/alert](../../../samples/alert)
 
-## 布局
+## 1. 布局
 
-### 思路
+### 1.1 思路
 
 我们整体使用 `布局二` 作为总体布局方案，并通过以下操作，把 `布局二` 改成`布局一`。
 
@@ -60,13 +63,13 @@ TODO
 
 ![](../../../assets/imgs/alert/77.png)
 
-### 实现
+### 1.2 实现
 
 在这一步中，我们不写任何的功能，只实现静态页面。
 
 - 每一个元素上都需要有一个唯一指定的 `class`，例如 `el-alert__icon`。规则是 `组件名__功能描述`。
 - 最外层 div
-  - class:el-alert--{type}: 不同类型的主题色。
+  - class:el-alert--{type}: 不同类型的主题色。（info/success/warning/danger）
   - class:is-{effect}: 明暗两套大的主题。
 - icon 图标
   - class:el-icon-{type}: 不同种类的文字图标。
@@ -97,11 +100,11 @@ export default {
 <style scoped></style>
 ```
 
-### 测试
+### 1.3 测试
 
 ![](../../../assets/imgs/alert/alert-layout-1.png)
 
-### 示例代码
+### 1.4 示例代码
 
 示例代码: [/src/components/alert-layout/src/main.vue](../../../samples/alert/src/components/alert-layout/src/main.vue)
 
@@ -140,7 +143,9 @@ export default {
 
 示例代码: [/src/components/alert-layout/src/main.vue](../../../samples/alert/src/components/alert-layout/src/main.vue)
 
-### 3. 基本功能
+## 3. 基本功能
+
+页面中的非浮层元素，不会自动消失。点击**关闭按钮**的时候，提示条消失。
 
 ### 3.1 实现思路
 
@@ -156,6 +161,8 @@ export default {
 ### 3.2 具体实现
 
 #### 3.2.1 可关闭
+
+当点击**关闭按钮**时，关闭 `Alert` 组件。
 
 具体的实现流程：
 
@@ -203,6 +210,8 @@ export default {
 
 #### 3.2 主题色
 
+根据 `type(props)` 来决定 `Alert` 组件的颜色。
+
 具体的实现流程：
 
 1. 在 `props` 中定义 `type` 属性。
@@ -233,7 +242,7 @@ export default {
 
 测试：
 
-在父组件调用这个组件，并在浏览器上查看组件是否变色，
+在父组件调用这个组件，并在浏览器上查看组件是否变色
 
 ```vue
 <alert-01-basic type="success" />
@@ -241,7 +250,9 @@ export default {
 
 ![](../../../assets/imgs/alert/alert-01-basic-1.png)
 
-### 3.3 文本
+#### 3.3 文本
+
+根据 `title(props)` 显示 `Alert` 组件的提示信息。
 
 1. 在 `props` 中定义 `title` 字段。
 2. 在 html 中用 `{{ title }}` 来显示。
@@ -251,6 +262,7 @@ export default {
   <div class="el-alert is-light" :class="['el-alert--' + type]" v-show="visible">
     ...
     <div class="el-alert__content">
+      <!-- 2. 在 html 中用 `{{ title }}` 来显示。 -->
       <span class="el-alert__title">
         {{ title }}
       </span>
@@ -260,15 +272,11 @@ export default {
 </template>
 
 <script>
-/**
- * 1. 可关闭
- * 2. 主题色
- * 3. 文本
- */
 export default {
   name: 'alert-01-basic',
   props: {
     // ...
+    // 1. 在 `props` 中定义 `title` 字段。
     title: {
       type: String,
       default: ''
@@ -279,9 +287,19 @@ export default {
 </script>
 ```
 
-### 3.4 完善
+测试：
 
-自此 `alert 警告` 组件的基本需求已经完成了。为了提升体验，我们在最外层添加 `transition` 标签，以获得一个动画效果。
+在父组件调用这个组件，并在浏览器上查看 `Alert` 组件的提示是否是从父组件传递过来的 `title` 。
+
+```vue
+<alert-01-basic type="success" title="这是一个成功的示例" />
+```
+
+![](../../../assets/imgs/alert/alert-01-basic-2.png)
+
+#### 3.4 完善
+
+自此 `alert 警告` 组件的基本需求已经完成了。为了提升体验，我们在最外层添加 `transition` 标签，并添加一个动画效果。
 
 ```css
 .el-alert-fade-enter,
@@ -290,11 +308,11 @@ export default {
 }
 ```
 
-### 3.5 优化
+#### 3.5 优化
 
-我们都知道在页面当中最容易变化的就是 html 和样式了。我们尽可能的使 html 部分看起来简单、整洁，以便于后期的维护。因此我们把所有的数据处理全部都放到 script 中。
+在页面当中最容易变化的就是 html 和样式，我们应该尽可能地使 html 部分看起来简单、整洁，以便于后期的维护。因此我们把**数据处理**相关的逻辑放到 script 中实现。
 
-- 使用 computed 的 `typeClass` 代替 html 中的判断。
+使用 computed 的 `typeClass` 代替 html 中的判断。
 
 ```vue
 <template>
@@ -315,17 +333,23 @@ export default {
 </script>
 ```
 
+### 示例工程
+
 完整代码：[/src/components/alert-01-basic/src/main.vue](../../../samples/alert/src/components/alert-01-basic/src/main.vue)
 
-## 主题
+## 4. 主题
+
+### 4.1 实现思路
 
 Alert 组件提供两个不同的主题：light 和 dark。
 
-![](../../../assets/imgs/alert/2.png)
-
 1. 定义两套 css 主题('is-light' 和 'is-dark')。
-2. 在 `props`中定义 effect 属性。
-3. 在组件最外层定义一个 div，并绑定 `class`，根据 `effect` 来决定使用哪个主题。
+2. 在 `props`中定义 `effect` 属性。
+3. 在组件最外层的 div 上绑定 `class`，根据 `effect(props)` 来决定使用哪个主题。
+
+![](../../../assets/imgs/alert/22.png)
+
+### 4.2 具体实现
 
 ```vue
 <template>
