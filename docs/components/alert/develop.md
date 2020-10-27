@@ -25,8 +25,8 @@ TODO
 - [4. 主题](#4-%E4%B8%BB%E9%A2%98)
   - [4.1 实现思路](#41-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
   - [4.2 示例代码](#42-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
-    - [4.3 测试](#43-%E6%B5%8B%E8%AF%95)
-    - [4.4 示例工程](#44-%E7%A4%BA%E4%BE%8B%E5%B7%A5%E7%A8%8B)
+  - [4.3 测试](#43-%E6%B5%8B%E8%AF%95)
+  - [4.4 示例工程](#44-%E7%A4%BA%E4%BE%8B%E5%B7%A5%E7%A8%8B)
 - [5. 自定义关闭按钮](#5-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE)
   - [5.1 实现思路](#51-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
   - [5.2 具体实现](#52-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
@@ -35,19 +35,24 @@ TODO
     - [5.2.3 设置回调](#523-%E8%AE%BE%E7%BD%AE%E5%9B%9E%E8%B0%83)
   - [5.3 测试](#53-%E6%B5%8B%E8%AF%95)
   - [5.4 完整代码](#54-%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81)
-  - [4. 带有 icon](#4-%E5%B8%A6%E6%9C%89-icon)
-    - [4.1 需求](#41-%E9%9C%80%E6%B1%82)
-    - [4.2 实现思路](#42-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
-  - [文字居中](#%E6%96%87%E5%AD%97%E5%B1%85%E4%B8%AD)
-    - [5.1 需求](#51-%E9%9C%80%E6%B1%82)
-    - [5.2 实现思路](#52-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
-  - [6. 带有辅助性文字介绍](#6-%E5%B8%A6%E6%9C%89%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
-    - [6.1 需求](#61-%E9%9C%80%E6%B1%82)
-    - [6.2 实现思路](#62-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
-  - [7. 带有 icon 和辅助性文字介绍：](#7-%E5%B8%A6%E6%9C%89-icon-%E5%92%8C%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
-    - [7.1 需求](#71-%E9%9C%80%E6%B1%82)
-    - [7.2 实现思路](#72-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
-  - [添加插槽](#%E6%B7%BB%E5%8A%A0%E6%8F%92%E6%A7%BD)
+- [6. 带有 icon](#6-%E5%B8%A6%E6%9C%89-icon)
+  - [6.1 实现思路](#61-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+  - [6.2 具体实现](#62-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0)
+  - [6.3 测试](#63-%E6%B5%8B%E8%AF%95)
+  - [6.4 示例代码](#64-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
+- [7. 文字居中](#7-%E6%96%87%E5%AD%97%E5%B1%85%E4%B8%AD)
+  - [7.1 实现思路](#71-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+  - [7.2 测试](#72-%E6%B5%8B%E8%AF%95)
+  - [7.3 示例代码](#73-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
+- [8. 带有辅助性文字介绍](#8-%E5%B8%A6%E6%9C%89%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
+  - [8.1 实现思路](#81-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+  - [8.2 测试](#82-%E6%B5%8B%E8%AF%95)
+  - [8.3 示例代码](#83-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
+- [9. 带有 icon 和辅助性文字介绍：](#9-%E5%B8%A6%E6%9C%89-icon-%E5%92%8C%E8%BE%85%E5%8A%A9%E6%80%A7%E6%96%87%E5%AD%97%E4%BB%8B%E7%BB%8D)
+  - [9.1 实现思路](#91-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+  - [9.2 测试](#92-%E6%B5%8B%E8%AF%95)
+  - [9.3 示例代码](#93-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
+- [10. 添加插槽](#10-%E6%B7%BB%E5%8A%A0%E6%8F%92%E6%A7%BD)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -388,7 +393,7 @@ export default {
 </script>
 ```
 
-#### 4.3 测试
+### 4.3 测试
 
 在父组件调用这个组件并传入 `effect="dark"`，并在浏览器上查看组件是否改变主题。
 
@@ -400,7 +405,7 @@ export default {
 
 ![](../../../assets/imgs/alert/alert-02-theme-1.png)
 
-#### 4.4 示例工程
+### 4.4 示例工程
 
 完整代码：[/src/components/alert-02-theme/src/main.vue](../../../samples/alert/src/components/alert-02-theme/src/main.vue)
 
@@ -444,8 +449,7 @@ export default {
 #### 5.2.2 自定义 `close-text`
 
 1. 定义 `props` 中的 `closeText` 属性
-2. 根据该属性来判断是直接显示自定义文字还是显示文字图标。
-3. 使用 computed 来判断是使用自定义文字还是文字图标
+2. 使用 computed 来判断来判断是直接显示自定义文字还是显示文字图标。
 
 ```vue
 <template>
@@ -455,9 +459,16 @@ export default {
 </template>
 <script>
 export default {
+  props: {
+    // 1. 定义 `props` 中的 `closeText` 属性
+    closeText: {
+      type: String,
+      default: ''
+    }
+  },
   computed: {
     closeClass() {
-      // 使用 computed 来判断是使用自定义文字还是文字图标
+      // 使用 computed 来判断来判断是直接显示自定义文字还是显示文字图标。
       return this.closeText === '' ? 'el-icon-close' : 'is-customed'
     }
   }
@@ -517,34 +528,40 @@ export default {
 
 完整代码：[/src/components/alert-03-close-btn/src/main.vue](../../../samples/alert/src/components/alert-03-close-btn/src/main.vue)
 
-### 4. 带有 icon
-
-#### 4.1 需求
+## 6. 带有 icon
 
 带有 icon 表示某种状态时提升可读性。
 
-![](../../../assets/imgs/alert/4.png)
+### 6.1 实现思路
 
-#### 4.2 实现思路
+1. 在 `props` 中定义一个 `showIcon` 属性，根据该属性来判断是否显示 icon。
+2. 根据 `props` 中的 `type` 决定显示哪个 icon。
 
-- 在 `props` 中定义一个 `showIcon` 属性。
-- 根据该属性来判断是否显示 icon。
-- 根据 `props` 中的 `type` 决定显示哪个 icon。
+![](../../../assets/imgs/alert/44.png)
+
+### 6.2 具体实现
+
+1. 在 `props` 中定义一个 `showIcon` 属性。
+2. 根据该属性来判断是否显示 icon。
+3. 根据 `props` 中的 `type` 决定显示哪个 icon。
 
 ```vue
 <template>
+  <!-- 2. 根据该属性来判断是否显示 icon。 -->
   <i class="el-alert__icon" :class="[iconClass, isBig]" v-if="showIcon"></i>
 </template>
 <script>
 export default {
   name: 'alert-04-icon',
   props: {
+    // 1. 在 `props` 中定义一个 `showIcon` 属性。
     showIcon: {
       type: Boolean,
       default: false
     }
   },
   computed: {
+    // 3. 根据 `props` 中的 `type` 决定显示哪个 icon。
     iconClass() {
       return 'el-icon-' + this.type
     },
@@ -557,21 +574,23 @@ export default {
 </script>
 ```
 
-注意：此时 `is-big` 还未使用，我们先指定一个空的字符串，并用 `// TODO` 注释以免忘记实现。
+> 注意：此时 `is-big` 还未使用，我们先指定一个空的字符串，并用 `// TODO` 注释以免忘记实现。
 
-测试：
+### 6.3 测试
+
+![](../../../assets/imgs/alert/alert-04-icon-1.png)
+
+### 6.4 示例代码
 
 完整代码：[/src/components/alert-04-icon/src/main.vue](../../../samples/alert/src/components/alert-04-icon/src/main.vue)
 
-### 文字居中
-
-#### 5.1 需求
+## 7. 文字居中
 
 使用 center 属性让文字水平居中。
 
-![](../../../assets/imgs/alert/5.png)
+### 7.1 实现思路
 
-#### 5.2 实现思路
+![](../../../assets/imgs/alert/55.png)
 
 - 在 `props` 中定义一个 `center` 属性。
 - 根据该属性来决定是否使用 `is-center` 这个 class。
@@ -598,36 +617,42 @@ export default {
 </script>
 ```
 
-测试：传入 `:center="true"`
+### 7.2 测试
+
+在父组件调用这个组件，并传入不同属性，查看是否符合预期。
+
+```vue
+<alert-05-center title="这是一个成功提示的文案" :center="true" />
+```
 
 ![](../../../assets/imgs/alert/alert-05-center-1.png)
 
+### 7.3 示例代码
+
 完整代码：[/src/components/alert-05-center/src/main.vue](../../../samples/alert/src/components/alert-05-center/src/main.vue)
 
-### 6. 带有辅助性文字介绍
-
-#### 6.1 需求
+## 8. 带有辅助性文字介绍
 
 包含标题和内容，解释更详细的警告。
 
-![](../../../assets/imgs/alert/6.png)
-
-#### 6.2 实现思路
+### 8.1 实现思路
 
 - 在 `props` 中定义 `description` 属性。
-- 根据该属性来判断是否显示描述信息。
+  - 根据该属性来判断是否显示描述信息。
+  - 根据该属性显示描述文本。
+  - 根据该属性来判断是否调整 `title` 的 `font-size`，即添加 `class="is-bold"`。
+- 如果 `title` 没有内容，可以单独显示 `description`。
 
-此外
-
-- 定义 `isBoldTitle` 来根据 `description` 属性来决定是否加深标题的颜色。
-- 当没有 title 的时候，单独显示 `description`。
+![](../../../assets/imgs/alert/66.png)
 
 ```vue
 <template>
   <div class="el-alert__content">
+    <!-- 如果 `title` 没有内容，可以单独显示 `description`。 -->
     <span class="el-alert__title" :class="[isBoldTitle]" v-if="title">
       {{ title }}
     </span>
+    <!-- 根据该属性来判断是否显示描述信息。根据该属性显示描述文本。 -->
     <p class="el-alert__description" v-if="description">{{ description }}</p>
   </div>
 </template>
@@ -635,12 +660,14 @@ export default {
 <script>
 export default {
   props: {
+    // 在 `props` 中定义 `description` 属性。
     description: {
       type: String,
       default: ''
     }
   },
   computed: {
+    // 根据该属性来判断是否调整 `title` 的 `font-size`，即添加 `class="is-bold"`。
     isBoldTitle() {
       return this.description ? 'is-bold' : ''
     }
@@ -649,7 +676,7 @@ export default {
 </script>
 ```
 
-测试
+### 8.2 测试
 
 ```vue
 <alert-06-description
@@ -661,17 +688,15 @@ export default {
 
 ![](../../../assets/imgs/alert/alert-06-description-1.png)
 
+### 8.3 示例代码
+
 完整代码：[/src/components/alert-06-description/src/main.vue](../../../samples/alert/src/components/alert-06-description/src/main.vue)
 
-### 7. 带有 icon 和辅助性文字介绍：
+## 9. 带有 icon 和辅助性文字介绍：
 
-#### 7.1 需求
-
-带有 icon 和辅助性文字介绍
+### 9.1 实现思路
 
 ![](../../../assets/imgs/alert/7.png)
-
-#### 7.2 实现思路
 
 - 定义两个图标样式：大图标和小图标。
 - 根据 `props` 中的 `description` 属性来判断显示大图标或者小图标。
@@ -699,7 +724,7 @@ export default {
 </script>
 ```
 
-测试
+### 9.2 测试
 
 ```vue
 <alert-07-description-icon
@@ -712,9 +737,11 @@ export default {
 
 ![](../../../assets/imgs/alert/alert-07-description-icon-1.png)
 
+### 9.3 示例代码
+
 完整代码：[/src/components/alert-07-description-icon/src/main.vue](../../../samples/alert/src/components/alert-07-description-icon/src/main.vue)
 
-### 添加插槽
+## 10. 添加插槽
 
 添加两个插槽
 
@@ -764,3 +791,5 @@ export default {
 }
 </script>
 ```
+
+示例代码： [/src/components/alert-08-slot/src/main.vue](../../../samples/alert/src/components/alert-08-slot/src/main.vue)
