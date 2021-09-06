@@ -9,8 +9,8 @@
 
 - [需求](https://element.eleme.cn/#/zh-CN/component/alert)
 - 概要设计（省）
-- [详细设计](./analysis.md)
-- [开发](./develop.md)
+- [详细设计](./docs/components/alert/analysis.md)
+- [开发](./docs/components/alert/develop.md)
 - 测试
 - 复盘
 - 
