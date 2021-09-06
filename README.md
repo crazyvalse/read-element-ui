@@ -4,13 +4,16 @@
 
 本篇文档的目的是希望通过分析 `element-ui` 的源代码，让同学们能够了解并学会如何开发 UI 组件，以便于让更多的自开发组件在项目中复用起来。
 
-- 目录结构
-- 构建
-- 组件
-  - [alert](./docs/components/alert/readme.md)
-- 官网
-- 主题
 
+以 [alert](./docs/components/alert/readme.md) 为例：
+
+- [需求](https://element.eleme.cn/#/zh-CN/component/alert)
+- 概要设计（省）
+- [详细设计](./analysis.md)
+- [开发](./develop.md)
+- 测试
+- 复盘
+- 
 ## 推荐文章
 
 - Element 非官方分析 https://www.jianshu.com/c/c71f9c127c71
